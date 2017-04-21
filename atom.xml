@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.hetaoo.cn/"/>
-  <updated>2017-04-21T02:49:59.769Z</updated>
+  <updated>2017-04-21T09:41:51.645Z</updated>
   <id>http://www.hetaoo.cn/</id>
   
   <author>
@@ -16,60 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hellowold2</title>
-    <link href="http://www.hetaoo.cn/2017/04/21/hellowold2/"/>
-    <id>http://www.hetaoo.cn/2017/04/21/hellowold2/</id>
-    <published>2017-04-21T02:42:21.000Z</published>
-    <updated>2017-04-21T02:49:59.769Z</updated>
+    <title>开篇</title>
+    <link href="http://www.hetaoo.cn/2017/04/21/newStart/"/>
+    <id>http://www.hetaoo.cn/2017/04/21/newStart/</id>
+    <published>2017-04-21T04:35:59.000Z</published>
+    <updated>2017-04-21T09:41:51.645Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<img src="/2017/04/21/newStart/timg.jpg" alt="Sunup image" title="Sunup image">    
+<blockquote><p>“ 昨天下了雨，今天刮了风，明天太阳就出来了。”</p>
+</blockquote>
+<h2 id="为什么突然要写博客"><a href="#为什么突然要写博客" class="headerlink" title="为什么突然要写博客"></a>为什么突然要写博客</h2><ul>
+<li>能够交到一些志同道合的朋友</li>
+<li>记录一下思路和细节，避免长期之后记忆错误</li>
+<li>提高将事情讲清楚的能力</li>
+<li>激励自己去持续学习和思考</li>
+<li>学会持之以恒地做一件事情</li>
+<li>记录成长</li>
+</ul>
+<h2 id="总结过去的一年"><a href="#总结过去的一年" class="headerlink" title="总结过去的一年"></a>总结过去的一年</h2><p>  工作差不多了一年了，回想自己这一年的时间里，自己的成长稍微有点慢，于是反思总结、和身边人比较，发现自己的缺点很明显：</p>
+<ul>
+<li>刚工作不知道技术链这么长，方向不明确</li>
+<li>基础不扎实</li>
+<li>平常工作忙，没有很好的利用空闲时间学习</li>
+<li>没有经常混开发社区，获取最新技术有点落后</li>
+</ul>
+<h2 id="未来要怎么做"><a href="#未来要怎么做" class="headerlink" title="未来要怎么做"></a>未来要怎么做</h2><p>  识迷途其未远，觉今是而昨非。保持持续学习是程序员必备的素质，自己也想在IT这条路上越走越走越远，有所成就，获得一种成就感，毕竟每一个程序员都有一个大牛梦。</p>
+<ul>
+<li>养成一个良好的习惯<ol>
+<li>工作中：善于总结、善于思考</li>
+<li>生活上：坚持锻炼，早睡早起</li>
+</ol>
+</li>
+<li>巩固基础知识，再忙每天都要抽时间学习||写代码||写博客</li>
+<li>空闲时间浏览开发社区信息，了解最新技术动态</li>
+<li>学习拍照技术，将女朋友拍的美美的</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;img src=&quot;/2017/04/21/newStart/timg.jpg&quot; alt=&quot;Sunup image&quot; title=&quot;Sunup image&quot;&gt;    
+&lt;blockquote&gt;&lt;p&gt;“ 昨天下了雨，今天刮了风，明天太阳就出来了。”&lt;/p&gt;
+&lt;/blockquote
     
     </summary>
     
       <category term="杂谈" scheme="http://www.hetaoo.cn/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      <category term="test" scheme="http://www.hetaoo.cn/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://www.hetaoo.cn/2017/04/21/hello-world/"/>
-    <id>http://www.hetaoo.cn/2017/04/21/hello-world/</id>
-    <published>2017-04-21T02:15:30.500Z</published>
-    <updated>2017-03-27T16:28:47.525Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
+      <category term="开篇" scheme="http://www.hetaoo.cn/tags/%E5%BC%80%E7%AF%87/"/>
     
   </entry>
   
