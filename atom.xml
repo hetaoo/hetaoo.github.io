@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.hetaoo.cn/"/>
-  <updated>2017-04-21T09:41:51.645Z</updated>
+  <updated>2017-04-24T04:00:21.219Z</updated>
   <id>http://www.hetaoo.cn/</id>
   
   <author>
@@ -14,6 +14,114 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pages与Hexo搭建个人博客</title>
+    <link href="http://www.hetaoo.cn/2017/04/21/githubPages/"/>
+    <id>http://www.hetaoo.cn/2017/04/21/githubPages/</id>
+    <published>2017-04-21T09:52:51.000Z</published>
+    <updated>2017-04-24T04:00:21.219Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>摘要：</strong> Github Pages与Hexo搭建个人博客的教程，网上一搜一大片，在这简短介绍搭建过程和自己踩得一些坑，主要是为了方便自己以后搭建，不再需要重新去找教程。</p>
+</blockquote>
+<h2 id="为什么选择GitHub-Pages？"><a href="#为什么选择GitHub-Pages？" class="headerlink" title="为什么选择GitHub Pages？"></a>为什么选择GitHub Pages？</h2><h3 id="很多人用wordpress，你为什么要用github-pages来搭建？"><a href="#很多人用wordpress，你为什么要用github-pages来搭建？" class="headerlink" title="很多人用wordpress，你为什么要用github pages来搭建？"></a>很多人用wordpress，你为什么要用github pages来搭建？</h3><ul>
+<li>github pages有300M免费空间，资料自己管理，保存可靠</li>
+<li>学着用github，享受github的便利，上面有很多大牛，眼界会开阔很多</li>
+<li>经常逛github，习惯性将一些东西提交到github</li>
+<li>wordpress等需要有自己的虚拟主机等</li>
+</ul>
+<h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>  
+</li>
+<li><a href="https://git-scm.com/" target="_blank" rel="external">Git</a>   
+</li>
+</ul>
+<blockquote><p>配置github就不说了，有一定经验的开发人员都会配</p>
+</blockquote>
+<h2 id="使用GitHub-Pages建立博客"><a href="#使用GitHub-Pages建立博客" class="headerlink" title="使用GitHub Pages建立博客"></a>使用GitHub Pages建立博客</h2><p>与GitHub建立好链接之后，就可以方便的使用它提供的Pages服务，GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。<br>想建立个人博客是用的第一种，形如hetaoo.github.io这样的可访问的站，每个用户名下面只能建立一个。</p>
+<h3 id="github上建立仓库"><a href="#github上建立仓库" class="headerlink" title="github上建立仓库"></a>github上建立仓库</h3><p>登录后系统，在github首页，点击页面右下角「New Repository」<br><img src="/2017/04/21/githubPages/hetaoo.github.io.jpg" alt="hetaoo.github.io image" title="hetaoo.github.io image"><br>点击「Create Repository」 完成创建。<br>接下来开启gh-pages功能，点击界面右侧的Settings，你将会打开这个库的setting页面，向下拖动，直到看见GitHub Pages，如图：<br><img src="/2017/04/21/githubPages/githubPages.jpg" alt="githubPages image" title="githubPages image"><br>点击Automatic page generator，Github将会自动替你创建出一个gh-pages的页面。 如果你的配置没有问题，那么大约15分钟之后，yourname.github.io这个网址就可以正常访问了~ 如果yourname.github.io已经可以正常访问了，那么Github一侧的配置已经全部结束了。–我的是已经配置好了的。</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>在命令行中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g   </div><div class="line">npm install hexo --save</div><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
+<h3 id="hexo的相关配置"><a href="#hexo的相关配置" class="headerlink" title="hexo的相关配置"></a>hexo的相关配置</h3><p>接着上面的操作，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init  </div><div class="line">npm install</div></pre></td></tr></table></figure><br>之后npm将会自动安装你需要的组件，只需要等待npm操作即可。   </p>
+<h4 id="首次体验Hexo"><a href="#首次体验Hexo" class="headerlink" title="首次体验Hexo"></a>首次体验Hexo</h4><p>继续操作，同样是在命令行中，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure><br>在浏览器中打开<a href="http://localhost:4000/，你将会看到预览效果。" target="_blank" rel="external">http://localhost:4000/，你将会看到预览效果。</a></p>
+<h2 id="怎样将Hexo与github-page-联系起来"><a href="#怎样将Hexo与github-page-联系起来" class="headerlink" title="怎样将Hexo与github page 联系起来"></a>怎样将Hexo与github page 联系起来</h2><p>大概分为以下几步：</p>
+<ul>
+<li>配置git个人信息</li>
+<li>配置Deployment</li>
+</ul>
+<h3 id="配置Git个人信息"><a href="#配置Git个人信息" class="headerlink" title="配置Git个人信息"></a>配置Git个人信息</h3><p>如果你之前已经配置好git个人信息，请跳过这一个 步骤，直接来到</p>
+<ol>
+<li>设置Git的user name和email：(如果是第一次的话)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;hetaoo&quot;</div><div class="line">git config --global user.email &quot;i@hetaoo.cn&quot;</div></pre></td></tr></table></figure></li>
+<li>生成密钥<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;i@hetaoo.cn&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h3><p>同样在_config.yml文件中，找到Deployment，然后按照如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:yourname/yourname.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p><strong>踩坑提醒：</strong></p>
+<ul>
+<li>注意需要提前安装一个扩展：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+如果没有执行者行命令，将会提醒<blockquote><p>deloyer not found:git</p>
+</blockquote></li>
+<li>如果出现下面这样的错误<blockquote><p>Permission denied (publickey).<br>fatal: Could not read from remote repository.<br>Please make sure you have the correct access rights<br>and the repository exists.</p>
+</blockquote>
+则是因为没有设置好public key所致。</li>
+</ul>
+<h2 id="主题推荐"><a href="#主题推荐" class="headerlink" title="主题推荐"></a>主题推荐</h2><p>每个不同的主题会需要不同的配置，主题配置文件在主题目录下的_config.yml。有两个比较好的主题推荐给大家。</p>
+<ul>
+<li>Yilia</li>
+<li>NexT</li>
+</ul>
+<p>具体配置就不写了，很简单。</p>
+<h2 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h2><p>添加sitemap和feed插件<br>切换到你本地的hexo 目录，在命令行窗口，输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-feed -save</div><div class="line">npm install hexo-generator-sitemap -save</div></pre></td></tr></table></figure><br>修改_config.yml，增加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># Extensions</div><div class="line">Plugins:</div><div class="line">  - hexo-generator-feed</div><div class="line">  - hexo-generator-sitemap</div><div class="line">#Feed Atom</div><div class="line">feed:</div><div class="line">  type: atom</div><div class="line">  path: atom.xml</div><div class="line">  limit: 20</div><div class="line">#sitemap</div><div class="line">sitemap:</div><div class="line">  path: sitemap.xml</div></pre></td></tr></table></figure><br>再执行以下命令，部署服务端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g</div></pre></td></tr></table></figure></p>
+<h2 id="添加404-页面"><a href="#添加404-页面" class="headerlink" title="添加404 页面"></a>添加404 页面</h2><p>GitHub Pages有提供制作404页面的指引：<a href="https://help.github.com/articles/creating-a-custom-404-page-for-your-github-pages-site/" target="_blank" rel="external">Custom 404 Pages</a><br>直接在根目录下创建自己的404.html或者404.md就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。</p>
+<p>推荐使用<a href="http://www.qq.com/404/" target="_blank" rel="external">腾讯公益404</a></p>
+<p>我的404页面配置如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-type"</span> <span class="attr">content</span>=<span class="string">"text/html;charset=utf-8;"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"all"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"index,follow"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://www.qq.com/404/search_children.js"</span></span></div><div class="line">      <span class="attr">charset</span>=<span class="string">"utf-8"</span> <span class="attr">homePageUrl</span>=<span class="string">"www.hetaoo.cn"</span></div><div class="line">      <span class="attr">homePageName</span>=<span class="string">"回到我的主页"</span>&gt;<span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h2><ul>
+<li>在你的source目录下新建CNAME文件，内容写你的域名</li>
+<li>在你的域名cdn解析中添加cname解析，指向hetaoo.github.io</li>
+<li>也可添加A解析，ip地址为  </li>
+</ul>
+<img src="/2017/04/21/githubPages/ip.jpg" alt="ip image" title="ip image">  
+<h2 id="国内加速"><a href="#国内加速" class="headerlink" title="国内加速"></a>国内加速</h2><ul>
+<li>开通对象储存oss</li>
+<li>开通cdn</li>
+</ul>
+<h3 id="oss"><a href="#oss" class="headerlink" title="oss"></a>oss</h3><p>新建Bucket<br><img src="/2017/04/21/githubPages/oss.jpg" alt="oss image" title="oss image">  </p>
+<ul>
+<li>储存内容为：低频访问</li>
+<li>读写权限为公共度</li>
+</ul>
+<h4 id="oss配置"><a href="#oss配置" class="headerlink" title="oss配置"></a>oss配置</h4><ul>
+<li>默认首页为：index.html</li>
+<li>回源规则设置为：镜像–&gt;回源地址：hetaoo.github.io</li>
+</ul>
+<h3 id="cdn"><a href="#cdn" class="headerlink" title="cdn"></a>cdn</h3><ul>
+<li><p>添加加速域名   </p>
+<img src="/2017/04/21/githubPages/createCDN.jpg" alt="createCDN image" title="createCDN image">
+</li>
+<li><p>添加cname解析才会生效   </p>
+<img src="/2017/04/21/githubPages/cname.jpg" alt="cname image" title="cname image">
+</li>
+</ul>
+<h2 id="最后附上我的-config-yml"><a href="#最后附上我的-config-yml" class="headerlink" title="最后附上我的_config.yml"></a>最后附上我的_config.yml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration</div><div class="line">## Docs: https://hexo.io/docs/configuration.html</div><div class="line">## Source: https://github.com/hexojs/hexo/</div><div class="line"></div><div class="line"># Site</div><div class="line">title: Hetaoo&apos;s Blog</div><div class="line">subtitle: 简单，美好，奋发</div><div class="line">description: 一个简单喜欢编程的程序员</div><div class="line">author:  Hetaoo</div><div class="line">email: i@hetaoo.cn</div><div class="line">keywords: &quot;后端,java,开发者,程序员,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder&quot;</div><div class="line">language: zh-CN</div><div class="line"></div><div class="line"># URL</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://www.hetaoo.cn</div><div class="line">root: /</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">permalink_defaults:</div><div class="line"></div><div class="line"># Directory</div><div class="line">source_dir: source</div><div class="line">public_dir: public</div><div class="line">tag_dir: tags</div><div class="line">archive_dir: archives</div><div class="line">category_dir: categories</div><div class="line">code_dir: downloads/code</div><div class="line">i18n_dir: :lang</div><div class="line">skip_render:</div><div class="line"></div><div class="line"># Writing</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">external_link: true # Open external links in new tab</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: true</div><div class="line">relative_link: false</div><div class="line">future: true</div><div class="line">highlight:</div><div class="line">  enable: true</div><div class="line">  line_number: true</div><div class="line">  auto_detect: false</div><div class="line">  tab_replace:</div><div class="line"></div><div class="line"># Category &amp; Tag</div><div class="line">default_category: uncategorized</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"></div><div class="line"># Date / Time format</div><div class="line">## Hexo uses Moment.js to parse and display date</div><div class="line">## You can customize the date format as defined in</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: YYYY-MM-DD</div><div class="line">time_format: HH:mm:ss</div><div class="line"></div><div class="line"># Pagination</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">per_page: 8</div><div class="line">pagination_dir: page</div><div class="line"></div><div class="line"># Archives</div><div class="line">## 2: Enable pagination</div><div class="line">## 1: Disable pagination</div><div class="line">## 0: Fully Disable</div><div class="line">archive: 1</div><div class="line">category: 1</div><div class="line">tag: 1</div><div class="line"></div><div class="line"># Extensions</div><div class="line">## Plugins: https://hexo.io/plugins/</div><div class="line">plugins: hexo-generator-feed</div><div class="line"></div><div class="line">## Themes: https://hexo.io/themes/</div><div class="line">theme: hexo-theme-yilia.git</div><div class="line"></div><div class="line"># Disqus #社会化评论disqus，我使用多说，在主题中配置</div><div class="line">disqus_shortname:</div><div class="line"></div><div class="line">sitemap:</div><div class="line">    path: sitemap.xml</div><div class="line">baidusitemap:</div><div class="line">    path: baidusitemap.xm</div><div class="line"></div><div class="line">feed:</div><div class="line">    type: atom</div><div class="line">    path: atom.xml</div><div class="line">    limit: 100</div><div class="line"></div><div class="line"># Markdown</div><div class="line">## https://github.com/chjj/marked</div><div class="line">markdown:</div><div class="line">  gfm: true</div><div class="line">  pedantic: false</div><div class="line">  sanitize: false</div><div class="line">  tables: true</div><div class="line">  breaks: true</div><div class="line">  smartLists: true</div><div class="line">  smartypants: true</div><div class="line"></div><div class="line"># Stylus</div><div class="line">stylus:</div><div class="line">  compress: false</div><div class="line"></div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type:git</div><div class="line">  branch:master</div><div class="line">  repo:https://github.com/hetaoo/hetaoo.github.io.git</div><div class="line"></div><div class="line">jsonContent:</div><div class="line">    meta: false</div><div class="line">    pages: false</div><div class="line">    posts:</div><div class="line">      title: true</div><div class="line">      date: true</div><div class="line">      path: true</div><div class="line">      text: true</div><div class="line">      raw: false</div><div class="line">      content: false</div><div class="line">      slug: false</div><div class="line">      updated: false</div><div class="line">      comments: false</div><div class="line">      link: false</div><div class="line">      permalink: false</div><div class="line">      excerpt: false</div><div class="line">      categories: false</div><div class="line">      tags: true</div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt; Github Pages与Hexo搭建个人博客的教程，网上一搜一大片，在这简短介绍搭建过程和自己踩得一些坑，主要是为了方便自己以后搭建，不再需要重新去找教程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id
+    
+    </summary>
+    
+      <category term="tools" scheme="http://www.hetaoo.cn/categories/tools/"/>
+    
+    
+      <category term="github" scheme="http://www.hetaoo.cn/tags/github/"/>
+    
+      <category term="hexo" scheme="http://www.hetaoo.cn/tags/hexo/"/>
+    
+      <category term="blog" scheme="http://www.hetaoo.cn/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>开篇</title>
