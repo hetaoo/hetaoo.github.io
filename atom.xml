@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.hetaoo.cn/"/>
-  <updated>2017-10-13T07:20:54.678Z</updated>
+  <updated>2017-10-18T12:03:07.495Z</updated>
   <id>http://www.hetaoo.cn/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Iterator的remove方法可保证从原集合中安全地删除对象</title>
+    <link href="http://www.hetaoo.cn/2017/10/18/iteratorRemove/"/>
+    <id>http://www.hetaoo.cn/2017/10/18/iteratorRemove/</id>
+    <published>2017-10-18T11:40:36.000Z</published>
+    <updated>2017-10-18T12:03:07.495Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果对正在被迭代的集合进行结构上的改变（即对该集合使用add、remove或clear方法），那么迭代器就不再合法（并且在其后使用该迭代器将会有ConcurrentModificationException异常被抛出）。</p>
+<p>如果使用迭代器自己的remove方法，那么这个迭代器就仍然是合法的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;(Arrays.asList(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;));</div><div class="line">for(String s:list)&#123;</div><div class="line">    if(s.equals(&quot;a&quot;))&#123;</div><div class="line">        list.remove(s);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它会抛出一个ConcurrentModificationException异常。 相反下面的显示正常：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;(Arrays.asList(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;));</div><div class="line">Iterator&lt;String&gt; iter = list.iterator();</div><div class="line">while(iter.hasNext())&#123;</div><div class="line">        String s = iter.next();</div><div class="line">        if(s.equals(&quot;a&quot;))&#123;</div><div class="line">            iter.remove();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>.next()必须在.remove()之前调用。在一个foreach循环中，编译器会使.next()在删除元素之后被调用，因此就会抛出ConcurrentModificationException异常，你也许希望看一下ArrayList.iterator()的源代码。<br><a href="http://www.cnblogs.com/softidea/p/4279574.html" target="_blank" rel="external">http://www.cnblogs.com/softidea/p/4279574.html</a></p>
+<p>Iterator 支持从源集合中安全地删除对象，只需在 Iterator 上调用 remove() 即可。这样做的好处是可以避免ConcurrentModifiedException ，这个异常顾名思意：当打开 Iterator 迭代集合时，同时又在对集合进行修改。有些集合不允许在迭代时删除或添加元素，但是调用 Iterator 的remove() 方法是个安全的做法。</p>
+<p>ArrayList 简选两段源码</p>
+<ul>
+<li><p>内部类，这个类实现了iterator接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">private class Itr implements Iterator&lt;E&gt; &#123;</div><div class="line">        int cursor;       // index of next element to return</div><div class="line">        int lastRet = -1; // index of last element returned; -1 if no such</div><div class="line">        int expectedModCount = modCount;</div><div class="line"></div><div class="line">        public boolean hasNext() &#123;</div><div class="line">            return cursor != size;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        @SuppressWarnings(&quot;unchecked&quot;)</div><div class="line">        public E next() &#123;</div><div class="line">            checkForComodification();</div><div class="line">            int i = cursor;</div><div class="line">            if (i &gt;= size)</div><div class="line">                throw new NoSuchElementException();</div><div class="line">            Object[] elementData = ArrayList.this.elementData;</div><div class="line">            if (i &gt;= elementData.length)</div><div class="line">                throw new ConcurrentModificationException();</div><div class="line">            cursor = i + 1;</div><div class="line">            return (E) elementData[lastRet = i];</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public void remove() &#123;</div><div class="line">            if (lastRet &lt; 0)</div><div class="line">                throw new IllegalStateException();</div><div class="line">            checkForComodification();</div><div class="line"></div><div class="line">            try &#123;</div><div class="line">                ArrayList.this.remove(lastRet);</div><div class="line">                cursor = lastRet;</div><div class="line">                lastRet = -1;</div><div class="line">                expectedModCount = modCount;</div><div class="line">            &#125; catch (IndexOutOfBoundsException ex) &#123;</div><div class="line">                throw new ConcurrentModificationException();</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>ArrayList 本身remove方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public E remove(int index) &#123;</div><div class="line">        rangeCheck(index);</div><div class="line"></div><div class="line">        modCount++;</div><div class="line">        E oldValue = elementData(index);</div><div class="line"></div><div class="line">        int numMoved = size - index - 1;</div><div class="line">        if (numMoved &gt; 0)</div><div class="line">            System.arraycopy(elementData, index+1, elementData, index,</div><div class="line">                             numMoved);</div><div class="line">        elementData[--size] = null; // clear to let GC do its work</div><div class="line"></div><div class="line">        return oldValue;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在内部类Itr中，有一个字段expectedModCount ，初始化时等于modCount，即当我们调用list.iterator()返回迭代器时，该字段被初始化为等于modCount。在类Itr中next/remove方法都有调用checkForComodification()方法，在该方法中检测modCount == expectedModCount，如果不相当则抛出异常ConcurrentModificationException。</p>
+<p>使用集合的修改操作(add/remove)中，都对modCount进行了+1。<br>在看看刚开始提出的那段代码，在迭代过程中，执行list.remove(val)，使得modCount+1，当下一次循环时，执行 it.next()，checkForComodification方法发现modCount != expectedModCount，则抛出异常。</p>
+<p>再来看看内部类Itr的remove()方法，在删除元素后，有这么一句expectedModCount = modCount，同步修改expectedModCount 的值。所以，如果需要在使用迭代器迭代时，删除元素，可以使用迭代器提供的remove方法。对于add操作，则在整个迭代器迭代过程中是不允许的。 其他集合(Map/Set)使用迭代器迭代也是一样。</p>
+<blockquote><p>勿以事小而不为。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果对正在被迭代的集合进行结构上的改变（即对该集合使用add、remove或clear方法），那么迭代器就不再合法（并且在其后使用该迭代器将会有ConcurrentModificationException异常被抛出）。&lt;/p&gt;
+&lt;p&gt;如果使用迭代器自己的remove方法，
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.hetaoo.cn/categories/java/"/>
+    
+    
+      <category term="iterator" scheme="http://www.hetaoo.cn/tags/iterator/"/>
+    
+      <category term="remove" scheme="http://www.hetaoo.cn/tags/remove/"/>
+    
+      <category term="ConcurrentModificationException" scheme="http://www.hetaoo.cn/tags/ConcurrentModificationException/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot集成pagehelp分页插件</title>
