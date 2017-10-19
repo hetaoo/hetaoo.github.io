@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.hetaoo.cn/"/>
-  <updated>2017-10-18T12:03:07.495Z</updated>
+  <updated>2017-10-18T12:22:41.309Z</updated>
   <id>http://www.hetaoo.cn/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java关键字简单描述</title>
+    <link href="http://www.hetaoo.cn/2017/10/18/javakeywords/"/>
+    <id>http://www.hetaoo.cn/2017/10/18/javakeywords/</id>
+    <published>2017-10-18T12:12:14.000Z</published>
+    <updated>2017-10-18T12:22:41.309Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="transient"><a href="#transient" class="headerlink" title="transient"></a>transient</h2><p>实现了Serilizable接口序列化时，有些属性需要序列化，而其他属性不需要被序列化，就可以加上transient关键字。换句话说，这个字段的生命周期仅存于调用者的内存中而不会写到磁盘里持久化。</p>
+<p>transient关键字只能修饰变量，而不能修饰方法和类</p>
+<ul>
+<li>Tips：<br><strong>1.对象的序列化可以通过实现两种接口来实现。</strong><br>若实现的是Serializable接口，则所有的序列化将会自动进行。<br>若实现的是Externalizable接口，则没有任何东西可以自动序列化，需要在writeExternal方法中进行手工指定所要序列化的变量，这与是否被transient修饰无关。<br><strong>2.一个静态变量不管是否被transient修饰，均不能被序列化</strong></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;transient&quot;&gt;&lt;a href=&quot;#transient&quot; class=&quot;headerlink&quot; title=&quot;transient&quot;&gt;&lt;/a&gt;transient&lt;/h2&gt;&lt;p&gt;实现了Serilizable接口序列化时，有些属性需要序列化，而其他属性不需要被序列
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.hetaoo.cn/categories/java/"/>
+    
+    
+      <category term="keywords" scheme="http://www.hetaoo.cn/tags/keywords/"/>
+    
+  </entry>
   
   <entry>
     <title>Iterator的remove方法可保证从原集合中安全地删除对象</title>
